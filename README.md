@@ -2,6 +2,29 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## What is PID?
+
+
+## How did I manually set PID parameters?
+* Firstly set proportion parameter(depicts with `kp` in code), set the value(such as 0.1,0.3,1,2,3...). The basic performance is that the car can easily go out the lane at first, with the value increasing, the car can move farther but quickly lose its balance and drive out of the lane. 
+
+The reason for these phenomenons is, `P controller` can quickly adjust the car to move back to the center line of the lane as kp comes higher. It is easliy to understand that when kp are too small, the car move so short distance that quickly leave the normal lane and even ｒｏｔates or move backwards. But if kp is too large, ｕnder the effect of P controller, the car can also move out of the lane. Because the car have its inertia, with `ｒｅlatively high inertia` and `narrow lane range`, It is quitely hard for P controller to drag back the car. The final value for kp I set was 0.3 which is also a ａｐｐroximation.
+
+* For now, It is time for setting ｀kd｀(differential parameter）
+
+    Now, set kd value from 0.3 to 3. Fluctuation came down , as the car basically moved within the lane. That's a good signal. 
+    But in some place such as sharp turn, a little bigger fluctuation kept still. So we can see the car adjust itself
+    more rapidly.
+    once kp was set as higher than about 0.5, regulation would be be faster and more sensitive visually, but with a high  influence
+    of inertia, The car can move outside the lane which means high overshoot.  So　after some experiment, the kp value was locked in [0.3，0.4], 
+    while kd = 3 or 3.3 and ki=0.  
+
+    for ki(for values > 0.0001), it even showed worse influence on model performance. So ki should be even smaller.
+
+
+
+
+
 
 ## Dependencies
 
