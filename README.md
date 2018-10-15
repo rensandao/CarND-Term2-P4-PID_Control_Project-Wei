@@ -10,7 +10,7 @@ Self-Driving Car Engineer Nanodegree Program
 
     The reason for these phenomenons is, `P controller` can quickly adjust the car to move back to the center line of the lane as kp comes higher. It is easliy to understand that when kp are too small, the car move so short distance that quickly leave the normal lane and even ｒｏｔates or move backwards. But if kp is too large, ｕnder the effect of P controller, the car can also move out of the lane. Because the car have its inertia, with `ｒｅlatively high inertia` and `narrow lane range`, It is quitely hard for P controller to drag back the car. The final value for kp I set was 0.3 which is also a ａｐｐroximation.
 
-* For now, It is time for setting ｀kd｀(differential parameter）. Tune the value from 0.1, 0.3....to 3, 3.3, 3.5+ . When adding differential parameter, obvious and positive infulence showed up. The car can run along the track without stepping out of the lane, which proves `Differential effect` can resist big fluctuation or the infulence of inertia. But if kd is larger than 5.0 such as 10.0, the consequence is that the car's steer angle adjusts so frequent that it cannot drive at a
+* For now, It is time for setting `kd`(differential parameter）. Tune the value from 0.1, 0.3....to 3, 3.3, 3.5+ . When adding differential parameter, obvious and positive infulence showed up. The car can run along the track without stepping out of the lane, which proves `Differential effect` can resist big fluctuation or the infulence of inertia. But if kd is larger than 5.0 such as 10.0, the consequence is that the car's steer angle adjusts so frequent that it cannot drive at a
 higher speed than 15mph.
 
 
