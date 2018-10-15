@@ -15,7 +15,7 @@ Self-Driving Car Engineer Nanodegree Program
     With the setting `kp = 0.3, kd = 3.331, ki = 0.0`I tune, the car can drive itself for laps within the track. But in some place such as sharp turn, a little bigger fluctuation kept still. So we can see the car need adjust itself more rapidly which brought instablity.
     
     
-* for `ki`(integration section), if visually, I didn't feel better promotion for fluctation. But from the real-time data, when ki = 0, the `i_error` was increasing quickly. That means totally the car tended to one side of center line for most time. So I finally set `ki = 0.0023` mainly limiting i_error to zero closely. But as I said before, visually I didn't feel
+* For `ki`(integration section), if visually, I didn't feel better promotion for fluctation. But from the real-time data, when ki = 0, the `i_error` was increasing quickly. That means totally the car tended to one side of center line for most time. So I finally set `ki = 0.0023` mainly limiting i_error to zero closely. But as I said before, visually I didn't feel
 any obvious promotion. If ki is too large, its effect will affect negativally, making the car move in chaos.
 
 Finally, PID setting is `kp = 0.3, kd = 3.331, ki = 0.0023`, while the speed limit is 30mph. Notice that this is not the only.
