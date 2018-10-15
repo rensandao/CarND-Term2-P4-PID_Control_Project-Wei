@@ -16,8 +16,14 @@ Self-Driving Car Engineer Nanodegree Program
     
     
 * for `ki`(integration section), if visually, I didn't feel better promotion for fluctation. But from the real-time data, when ki = 0, the `i_error` was increasing quickly. That means totally the car tended to one side of center line for most time. So I finally set `ki = 0.0023` mainly limiting i_error to zero closely. But as I said before, visually I didn't feel
-any obvious promotion.
+any obvious promotion. If ki is too large, its effect will affect negativally, making the car move in chaos.
 
+Finally, PID setting is `kp = 0.3, kd = 3.331, ki = 0.0023`, while the speed limit is 30mph. Notice that this is not the only.
+
+So for manual tuning, there is at least two points as follows:
+* Manual tuning is hard but necessary, the process of tuning help us better understand every single effect of PID settings.
+But as It's hard and lowly accurate, to find relatively precise value or threshold, self-tuning or auto-tuning seems necessary.
+* Manual tuning above is base on the case that car's speed limit equals 30mph. Once I change the speed limit, original PID settings are not longer fit for new situation. If manually tuning again, that quitely make people crazy. 
 
 
 
