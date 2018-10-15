@@ -5,7 +5,7 @@ Self-Driving Car Engineer Nanodegree Program
 ## What is PID?
 
 
-## How did I manually set PID parameters?
+## How did I manually tune PID settings?
 * Firstly set proportion parameter(depicts with `kp` in code), tune the value(such as 0.1,0.3,1,2,3...). The basic performance is that the car can easily go out the lane at first, with the value increasing, the car can move farther but quickly lose its balance and drive out of the lane. 
 
     The reason for these phenomenons is, `P controller` can quickly adjust the car to move back to the center line of the lane as kp comes higher. It is easliy to understand that when kp are too small, the car move so short distance that quickly leave the normal lane and even ｒｏｔates or move backwards. But if kp is too large, ｕnder the effect of P controller, the car can also move out of the lane. Because the car have its inertia, with `ｒｅlatively high inertia` and `narrow lane range`, It is quitely hard for P controller to drag back the car. The final value for kp I set was 0.3 which is also a ａｐｐroximation.
@@ -15,9 +15,8 @@ Self-Driving Car Engineer Nanodegree Program
     With the setting `kp = 0.3, kd = 3.331, ki = 0.0`I tune, the car can drive itself for laps within the track. But in some place such as sharp turn, a little bigger fluctuation kept still. So we can see the car need adjust itself more rapidly which brought instablity.
     
     
-* for ki(for values > 0.0001), it even showed worse influence on model performance. So ki should be even smaller.
-
-
+* for `ki`(integration section), if visually, I didn't feel better promotion for fluctation. But from the real-time data, when ki = 0, the `i_error` was increasing quickly. That means totally the car tended to one side of center line for most time. So I finally set `ki = 0.0023` mainly limiting i_error to zero closely. But as I said before, visually I didn't feel
+any obvious promotion.
 
 
 
