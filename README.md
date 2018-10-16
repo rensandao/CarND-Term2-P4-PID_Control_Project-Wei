@@ -2,7 +2,6 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
-
 ## How did I manually tune PID hyperparameters?(Reflection)
 * Firstly set proportion hyperparameter(depicts with `kp` in code), tune the value(such as 0.1,0.3,1,2,3...). The basic performance is that the car can easily go out the lane at first, with the value increasing, the car can move farther but quickly lose its balance and drive out of the lane. 
 
@@ -23,7 +22,8 @@ So for manual tuning, there is at least two points as follows:
 But as It's hard and lowly accurate, to find relatively precise value or threshold, self-tuning or auto-tuning seems necessary.
 * Manual tuning above is base on the case that car's speed limit equals 30mph. Once I change the speed limit, original PID settings are not longer fit for new situation. If manually tuning again, that quitely make people crazy. 
 
-
+## Self-tuning(ｔｏ be continued)
+## PID for speed(to be continued)
 
 ## Dependencies
 
