@@ -2,15 +2,13 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
-## What is PID?
 
-
-## How did I manually tune PID settings?
-* Firstly set proportion parameter(depicts with `kp` in code), tune the value(such as 0.1,0.3,1,2,3...). The basic performance is that the car can easily go out the lane at first, with the value increasing, the car can move farther but quickly lose its balance and drive out of the lane. 
+## How did I manually tune PID hyperparameters?(Reflection)
+* Firstly set proportion hyperparameter(depicts with `kp` in code), tune the value(such as 0.1,0.3,1,2,3...). The basic performance is that the car can easily go out the lane at first, with the value increasing, the car can move farther but quickly lose its balance and drive out of the lane. 
 
     The reason for these phenomenons is, `P controller` can quickly adjust the car to move back to the center line of the lane as kp comes higher. It is easliy to understand that when kp are too small, the car move so short distance that quickly leave the normal lane and even ｒｏｔates or move backwards. But if kp is too large, ｕnder the effect of P controller, the car can also move out of the lane. Because the car have its inertia, with `ｒｅlatively high inertia` and `narrow lane range`, It is quitely hard for P controller to drag back the car. The final value for kp I set was 0.3 which is also a ａｐｐroximation.
 
-* For now, It is time for setting `kd`(differential parameter）. Tune the value from 0.1, 0.3....to 3, 3.3, 3.5+ . When adding differential parameter, obvious and positive infulence showed up. The car can run along the track without stepping out of the lane, which proves `Differential effect` can resist big fluctuation or the infulence of inertia. That's a good signal. But if kd is larger than 5.0 such as 10.0, the consequence is that the car's steer angle adjusts so frequent that it cannot drive at a higher speed than 15mph.
+* For now, It is time for setting `kd`(differential parameter）. Tune the value from 0.1, 0.3....to 3, 3.3, 3.5+ . When adding differential hyperparameter, obvious and positive infulence showed up. The car can run along the track without stepping out of the lane, which proves `Differential effect` can resist big fluctuation or the infulence of inertia. That's a good signal. But if kd is larger than 5.0 such as 10.0, the consequence is that the car's steer angle adjusts so frequent that it cannot drive at a higher speed than 15mph.
 
     With the setting `kp = 0.3, kd = 3.331, ki = 0.0`I tune, the car can drive itself for laps within the track. But in some place such as sharp turn, a little bigger fluctuation kept still. So we can see the car need adjust itself more rapidly which brought instablity.
     
