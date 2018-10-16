@@ -48,22 +48,16 @@ int main()
     of inertia, The car can move outside the lane which means high overshoot.  So　after some experiment, the kp value was locked in [0.3，0.4], 
     while kd = 3 or 3.3 and ki=0.  
 
-    for ki(for values > 0.01), it even showed worse influence on model performance. So ki should be even smaller.
-
-   
+    for ki(for values > 0.01), it even showed worse influence on model performance. So ki should be even smaller. 
   
   2. twiddle: auto-tuning or self_tuning of PID settings 
 
-    自动调节的原理：
-    调整的对象是 PID三个参数；评定方法是均方值；
-    
+     The principle of twiddle:  to find the threshold of hyperparameters, use a subtle change to update PID hyperparameters,
+     compare the final error in cetain steps or time. 
 
   3. SGD
-
   4. combined?
-
   5. Using another PID to control the speed
-  
   */
 
   double kp =  0.3; //0.33;
@@ -106,7 +100,7 @@ int main()
           if(steer_value > 1.0) steer_value = 1.0;
           if(steer_value < -1.0) steer_value = -1.0;
 
-          //pid_throttle.UpdateError(speed - 20);
+          //pid_throttle.UpdateError(speed - 40);
           //throttle_value = pid_throttle.TotalError();
 
           // DEBUG
