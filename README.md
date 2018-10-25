@@ -22,7 +22,7 @@ So for manual tuning, there is at least two points as follows:
 But as It's hard and lowly accurate, to find relatively precise value or threshold, self-tuning or auto-tuning seems necessary.
 * Manual tuning above is base on the case that car's speed limit equals 30mph. Once I change the speed limit, original PID settings are not longer fit for new situation. If manually tuning again, that quitely make people crazy. 
 
-## Twiddle or Auto-tuning(ｔｏ be continued)
+## Twiddle or Auto-tuning(to be continued)
 ## PID for speed(to be continued)
 
 ## Dependencies
