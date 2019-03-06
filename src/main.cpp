@@ -45,8 +45,8 @@ int main()
     But in some place such as sharp turn, a little bigger fluctuation kept still. So we can see the car adjust itself
     more rapidly.
     once kp was set as higher than about 0.5, regulation would be be faster and more sensitive visually, but with a high  influence
-    of inertia, The car can move outside the lane which means high overshoot.  So　after some experiment, the kp value was locked in [0.3，0.4], 
-    while kd = 3 or 3.3 and ki=0.  
+    of inertia, The car can move outside the lane which means high overshoot.  So　after some experiment, the kp value was locked in 
+    [0.3，0.4], while kd = 3 or 3.3 and ki=0.  
 
     for ki(for values > 0.01), it even showed worse influence on model performance. So ki should be even smaller. 
   
