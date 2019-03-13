@@ -4,6 +4,7 @@
 class PID {
   
   double pre_error;
+  
 public:
   /*
   * Errors
